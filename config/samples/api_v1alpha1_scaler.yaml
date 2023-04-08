@@ -1,0 +1,17 @@
+apiVersion: api.ialexegorov.neoflex.ru/v1alpha1
+kind: Scaler
+metadata:
+  labels:
+    app.kubernetes.io/name: scaler
+    app.kubernetes.io/instance: scaler-sample
+    app.kubernetes.io/part-of: scaler
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: scaler
+  name: scaler-sample
+spec:
+  start: 5
+  end: 20
+  replicas: 3
+  deployments:
+    - name: nginx
+      namespace: default
